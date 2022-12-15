@@ -1,14 +1,31 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/epayday_tab
+    url: jdbc:mysql://localhost:3306/test
     username: root
-    password: dlrwn89
+    password: rladlrwn89!
 
-  jpa: # DB 쿼리 작성 없이 코드로 쉽게 데이터 처리를 위함.
-    show-sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  # DB 쿼리 작성 없이 코드로 쉽게 데이터 처리를 위함.
+  #  jpa:
+  ##    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  #    open-in-view: false
+  #    properties:
+  #      hibernate:
+  #        show-sql: true
+  #        format_sql: true
+  #        ddl-auto: none
+
+  jpa:
+    #    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    #    hibernate:
+    #      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+        format_sql: true
+        ddl-auto: none
 server:
   port: 8081 # 사용 포트
 
